@@ -1,6 +1,7 @@
 import sys
 import os
 import shutil
+import PyQt5
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QLineEdit, QDialog, QFileDialog
 
 global source_directory
@@ -185,4 +186,7 @@ def appManage():
             print(f'Moved: {filename}')
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        PyQt5.show_fatal_error(e)
